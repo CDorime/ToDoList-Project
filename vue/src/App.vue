@@ -8,7 +8,6 @@
         <div class="status">
           <span @click="toggleStatus(index)">
             {{ note.completed ? "✅" : "❌" }}
-            <!-- Галочка или крестик -->
           </span>
         </div>
         <button @click="deleteNote(index)" class="delete-button">
@@ -63,7 +62,7 @@ export default {
           this.notes[this.editingIndex] = {
             title: this.title,
             text: this.text,
-            completed: false, // Статус выполнения
+            completed: false,
           };
           this.editingIndex = null;
         } else {
@@ -122,10 +121,12 @@ export default {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   }
   .status {
+    width: max-content;
     font-size: 20px;
     cursor: pointer;
   }
   .delete-button {
+    width: max-content;
     background-color: red;
     color: white;
     border: none;
@@ -135,6 +136,7 @@ export default {
     border-radius: 10px;
   }
   .edit-button {
+    width: max-content;
     background-color: orange;
     color: white;
     border: none;
@@ -154,7 +156,7 @@ export default {
   align-items: center;
   .mainPageSiteNoteWindowTitleCreating,
   .mainPageSiteNoteWindowTextCreating {
-    width: 100%;
+    width: max-content;
     margin: 5px 0;
     padding: 10px;
   }
